@@ -1,0 +1,15 @@
+<h1> Edit Existing User </h1>
+<%= form_for @user do |f| %>
+    Username: <%= f.text_field :username %> <br> 
+    Email: <%=f.text_field :email %><br>
+    Password: <%=f.text_field :password_digest %><br>
+    Member?: <%= f.radio_button :member_status, true %>
+             <%= f.label :member_status, "Yes", :value => true %>
+             <%= f.radio_button :member_status, false %>
+             <%= f.label :member_status, "No", :value => false %><br>
+    Admin?: <%= f.radio_button :admin, true %>
+             <%= f.label :admin, "Yes", :value => true %>
+             <%= f.radio_button :admin, false %>
+             <%= f.label :admin, "No", :value => false %><br>
+             <%= f.submit "Submit" %>
+<% end %>

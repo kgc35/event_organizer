@@ -1,0 +1,30 @@
+<h1> <%= @user.title %> </h1>
+<ul>
+    <li> <%= link_to "Back to Index", users_path %></li>
+    Email: <%= @user.email %> <br> 
+    Member Status: <%= @user.member_status %> <br>
+    Admin Status: <%= @user.admin %> <br>
+</ul>
+
+<ul>
+    <h2> Created events </h2>
+    <% @events_created.each do |e| %>
+        <li><%= link_to e.title, event_path(e) %></li>
+        Date of Event: <%= e.date_of_event %>
+        Location of Event: <%= e.location %>
+    <% end %>
+</ul>
+
+<ul>
+    <h2> Attending events </h2>
+    <% @attendances.each do |a| %>
+        <% event = a.event %>
+        <li><%= event.title %></li>
+        Date of Event: <%= event.date_of_event %>
+        Location of Event: <%= event.location %>
+    <% end %>
+</ul>
+
+
+
+
